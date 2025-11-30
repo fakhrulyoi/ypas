@@ -138,6 +138,109 @@ ul {
     transform: scale(1.1);
 }
 
+/* === PRAYER TIMES BANNER === */
+.prayer-times-banner {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    padding: 2rem 0;
+    margin-bottom: 0;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.prayer-times-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: rgba(251, 191, 36, 0.05);
+    border-radius: 50%;
+    transform: translate(50px, -50px);
+    z-index: 1;
+}
+
+.prayer-times-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.prayer-times-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.prayer-times-header h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.prayer-times-header i {
+    color: var(--gold);
+    font-size: 1.8rem;
+}
+
+.prayer-times-header p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.prayer-times-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.prayer-time-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.prayer-time-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+    border-color: var(--gold);
+}
+
+.prayer-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.prayer-time {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold);
+    font-family: 'Courier New', monospace;
+}
+
+/* Dark Mode for Prayer Times Banner */
+.dark-mode .prayer-times-banner {
+    background: linear-gradient(135deg, rgba(92, 121, 169, 0.8) 0%, rgba(17, 24, 39, 0.95) 100%);
+}
+
+/* === END PRAYER TIMES BANNER === */
+
 /* Main Header */
 .main-header {
     background: var(--bg-white);
@@ -936,10 +1039,10 @@ ul {
 .contact-form-v2 .btn-lg {
     margin-top: 0.5rem;
 }
-
 /* Utility Class (needed for contact phone list) */
 .text-center { text-align: center; }
 .mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
 
 /* Footer */
 .main-footer {
@@ -1042,6 +1145,16 @@ ul {
     .stat-item:nth-child(2) {
         border-right: none;
     }
+
+    /* Prayer Times Responsive */
+    .prayer-times-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    .prayer-times-header h3 {
+        font-size: 1.3rem;
+    }
 }
 
 /* Mobile Standard (max-width: 768px) */
@@ -1085,6 +1198,10 @@ ul {
         width: 100%;
     }
 
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
     /* Stats */
     .stats-grid {
         grid-template-columns: 1fr;
@@ -1099,7 +1216,6 @@ ul {
     .dark-mode .stat-item {
         border-color: rgba(255,255,255,0.1);
     }
-
 
     .stat-item:last-child {
         border-bottom: none;
@@ -1144,7 +1260,7 @@ ul {
         grid-template-columns: 1fr;
     }
 
-    /* NEW CONTACT SECTION (V2) RESPONSIVE */
+    /* Contact Section */
     .contact-box-v2 {
         padding: 2rem;
     }
@@ -1178,7 +1294,7 @@ ul {
         margin: 0 auto;
     }
 
-
+    /* Footer */
     .footer-content {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -1187,6 +1303,36 @@ ul {
 
     .social-icons {
         justify-content: center;
+    }
+
+    /* Prayer Times Mobile */
+    .prayer-times-banner {
+        padding: 1.5rem 0;
+    }
+
+    .prayer-times-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+
+    .prayer-time-item {
+        padding: 0.75rem;
+    }
+
+    .prayer-label {
+        font-size: 0.65rem;
+    }
+
+    .prayer-time {
+        font-size: 1rem;
+    }
+
+    .prayer-times-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .prayer-times-header i {
+        font-size: 1.3rem;
     }
 }
 
@@ -1200,7 +1346,7 @@ ul {
     }
 
     .top-socials {
-        display: none; /* Hide socials on very small screens if desired, or allow wrap */
+        display: none;
     }
 
     .top-contacts {
@@ -1228,5 +1374,152 @@ ul {
 
     .logo-text .brand-sub {
         font-size: 0.7rem;
+    }
+
+    /* Prayer Times - Extra Small */
+    .prayer-times-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .prayer-time-item {
+        padding: 0.5rem;
+    }
+
+    .prayer-label {
+        font-size: 0.6rem;
+    }
+
+    .prayer-time {
+        font-size: 0.9rem;
+    }
+
+    .prayer-times-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .prayer-times-header p {
+        font-size: 0.8rem;
+    }
+
+    /* Contact Form */
+    .contact-info-column .contact-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .contact-form-column h4 {
+        font-size: 1.2rem;
+    }
+
+    /* Cards */
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Course Card Mobile */
+    .card-image {
+        height: 150px;
+    }
+
+    .card-icon {
+        font-size: 2.5rem;
+        width: 60px;
+        height: 60px;
+    }
+
+    .course-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .course-specs {
+        font-size: 0.85rem;
+    }
+
+    /* Feature List */
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .f-icon {
+        margin: 0 auto;
+    }
+
+    /* Section Spacing */
+    .section {
+        padding: 2.5rem 0;
+    }
+
+    /* Buttons */
+    .btn-lg {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer-brand h5 {
+        font-size: 1.25rem;
+    }
+
+    .footer-bottom {
+        font-size: 0.8rem;
+        padding: 1rem 0;
+    }
+}
+
+/* Extra Small (max-width: 360px) */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .logo-text .brand-main {
+        font-size: 1rem;
+    }
+
+    .prayer-times-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .prayer-times-header h3 {
+        font-size: 1rem;
+        gap: 5px;
+    }
+
+    .prayer-times-header i {
+        font-size: 1.2rem;
+    }
+
+    .prayer-times-header p {
+        font-size: 0.75rem;
+    }
+
+    .prayer-label {
+        font-size: 0.55rem;
+    }
+
+    .prayer-time {
+        font-size: 0.85rem;
+    }
+
+    .stats-grid {
+        gap: 0.5rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
     }
 }

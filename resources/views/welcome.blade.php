@@ -37,6 +37,49 @@
         </div>
     </div>
 
+    <!-- Prayer Times Banner Section -->
+    <div class="prayer-times-banner" id="prayerTimesBanner">
+        <div class="container">
+            <div class="prayer-times-wrapper">
+                <div class="prayer-times-header">
+                    <h3><i class="fas fa-mosque"></i> Waktu Solat Hari Ini</h3>
+                    <p id="prayerDate">Sedang memuatkan...</p>
+                </div>
+
+                <div class="prayer-times-grid" id="prayerTimesGrid">
+                    <div class="prayer-time-item">
+                        <span class="prayer-label">Imsak</span>
+                        <span class="prayer-time" id="imsak">--:--</span>
+                    </div>
+                    <div class="prayer-time-item">
+                        <span class="prayer-label">Subuh</span>
+                        <span class="prayer-time" id="subuh">--:--</span>
+                    </div>
+                    <div class="prayer-time-item">
+                        <span class="prayer-label">Dhuha</span>
+                        <span class="prayer-time" id="dhuha">--:--</span>
+                    </div>
+                    <div class="prayer-time-item">
+                        <span class="prayer-label">Zohor</span>
+                        <span class="prayer-time" id="zuhr">--:--</span>
+                    </div>
+                    <div class="prayer-time-item">
+                        <span class="prayer-label">Asar</span>
+                        <span class="prayer-time" id="asar">--:--</span>
+                    </div>
+                    <div class="prayer-time-item">
+                        <span class="prayer-label">Maghrib</span>
+                        <span class="prayer-time" id="maghrib">--:--</span>
+                    </div>
+                    <div class="prayer-time-item">
+                        <span class="prayer-label">Isyak</span>
+                        <span class="prayer-time" id="isyak">--:--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header class="main-header" id="mainHeader">
         <div class="container header-inner">
             <div class="logo-wrapper">

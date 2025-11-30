@@ -82,12 +82,9 @@
 
     <header class="main-header" id="mainHeader">
         <div class="container header-inner">
-            <div class="logo-wrapper">
-                <div class="logo-text">
-                    <span class="brand-sub">KOLEJ YAYASAN PAHANG</span>
-                    <span class="brand-main">ADVANCED SKILLS</span>
-                </div>
-            </div>
+           <div class="logo-wrapper">
+    <img src="{{ asset('YP Advanced Skills Logo.png') }}" alt="YP Advanced Skills Logo" class="logo-image">
+</div>
 
             <nav class="desktop-nav">
                 <ul class="nav-list">
